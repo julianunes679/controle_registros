@@ -1,26 +1,43 @@
+registros = {}
+
 def menu_registros():
     print("===MENU===")
     print("SISTEMA DE REGISTRO")
-    print("1 - ")
+    print("1 - Cadastro de Registro")
     print("2 - ")  
     print("3 - Sair")
 
 def opcao_um():
-    print("Excecutando opção 1")
+    nome = input("Nome: ")
+    idade = input("Idade: ")
+
+    registros[nome] = {
+        "idade": idade
+    }
+
+    return "Cadastro realizado com sucesso"
+
+
 def opcao_dois():
-    print("Excecutando opção 2")
+    return "Executando opção 2"
 
 def controle ():
     while True:     
         menu_registros()
         opcao = input("Escolha uma opção: ")
         if opcao == "1":
-            opcao_um()
+            
+            resultado = opcao_um()
+            print(resultado)
+
         elif opcao == "2":
-            opcao_dois()
+            resultado = opcao_dois()
+            print(resultado)
+
         elif opcao == "3":
             print("Saindo do sistema.")
             break
+
         else:
             print("Opção inválida. Tente novamente.")
 
